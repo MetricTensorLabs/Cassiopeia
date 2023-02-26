@@ -4,9 +4,12 @@
 
 Frequently used star catalogues include the U.S. Smithsonian Astrophysical Observatory Catalogue,Hipparcos Catalogue, Henry Draper Catalogue, Bright Star Catalogue, etc. The SAO J2000 (epoch = J2000) compiled by the U.S. Smithsonian Astrophysical Observatory, recording around 250,000 stars brighter than 17 Mv, is adopted as the standard catalog internationally.
 
-## Smith - Development and Implementation of Star Tracker Based Attitude Determination (2017)
 
-Tycho-2 catalog is the largest collection of stars available, with over 2.5 millions stars recorded from the European SPace Agency's Hipparcos Satellite. Along with vast number of stars available, the Tycho-2 catalog is used due to the Hipparcos satellite's ablity to measure changes in a star's position on the order of milliarcseconds per year.
+### Smith - Development and Implementation of Star Tracker Based Attitude Determination (2017)
+Tycho-2 catalog is the largest collection of stars available, with over 2.5 millions stars recorded from the European Space Agency's Hipparcos Satellite. Along with vast number of stars available, the Tycho-2 catalog is used due to the Hipparcos satellite's ablity to measure changes in a star's position on the order of milliarcseconds per year.
+
+### Sarvi(et. al.) - Design and Implementation of a star-tracker (2015)
+In out star sensor, the Hipparcos star catalogue will be used.
 
 ## Bratt - Analysis of Star Identification Algorithms due to Uncompensated Spatial Distortion (2013)
 
@@ -27,3 +30,9 @@ Of the catalogs listed, few provide the direct information necessary for star id
 
 **Selection**</br>
 The Hipparcos Database was chosen due to its high positioning knowledge to 1 milliarsecond and for its comprehensive database listing of stars. It contained a sufficient number of stars in both hemispheres for the ability to identify stars globally. Star intensity information allowed for variability in testing of camera parameters during simulation and experimental analyses. A fully updated version of the database was published in 2007 and was well known for its ease in star indexing and precession.
+
+
+
+
+
+
