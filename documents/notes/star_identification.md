@@ -8,7 +8,7 @@ ABSTRACT: A new highly robust algorithm, called Pyramid, is presented to identif
 <p align="center">
   <img src="https://github.com/MetricTensorLabs/Star-Tracker/blob/main/documents/notes/figs/pyramid_flowchart.png" width="700">
   </br>
-  <em>Fig. Pyramid algorithm Flowchart</em>
+  <em>Fig. Pyramid algorithm flowchart</em>
 </p>
 
 ## Brady (et al.) - The Inertial Stellar Compass: A New Direction in Spacecraft Attitude Determination (2002)
@@ -19,7 +19,7 @@ The Mortari Pyramid algorithm was further modified to use prior attitude knowled
 
 ## Samuel (et al.) - Design and Performance of an Open-Source Star Tracker Algorithm on Commercial Off-The-Shelf Cameras and Computers (2020)
 
-We pass the measured bearing vectors to a triangle star search algorithm that processes sets of three stars at each iteration of a loop. To avoid reusing false positive stars repeatedly for numerous successive iterations, we employ an algorithm to search through the catalog with as few repeated stars as possible; this algorithm reduces the number of successive cycles without reuse of recent stars.17 Our algorithm is a modification of a reflector identification (REFLID) algorithm, which itself is a modification of the Pyramid star ID approach.
+We pass the measured bearing vectors to a triangle star search algorithm that processes sets of three stars at each iteration of a loop. To avoid reusing false positive stars repeatedly for numerous successive iterations, we employ an algorithm to search through the catalog with as few repeated stars as possible; this algorithm reduces the number of successive cycles without reuse of recent stars. Our algorithm is a modification of a reflector identification (REFLID) algorithm, which itself is a modification of the Pyramid star ID approach.
 
 ## Smith - Development and implementation of star tracker based attitude determination (2017)
 
@@ -52,3 +52,35 @@ In order to meet our goals, we need another order of magnitude Field of View imp
 For a case where average constellation width is 500 pixels, this results in a 1000x improvement in the maximum number of constellations which can quickly be looked up (resolving the ambiguity of the ordering of the values results in a 2x improvement, and adding a third value results in a 500x improvement).
 
 This can also be traded for a 10x improvement in the amount of tolerable star position error.
+
+## Smith - Development and Implementation of Star Tracker Based Attitude Determination (2017)
+
+*This paper contains good literature review*</br>
+
+Since the 1970’s, several star identification algorithms were created to answer the Lost in Space problem, and are separated into two categories of identification analysis: 
+1. an instance of subgraph isomorphism, or 
+2. pattern recognition. Subgraph isomorphism deals with the angular separations between the stars and their adjacent neighbors; pattern recognition associates stars with a pre-defined image pattern, such as is used in facial recognition.
+
+The latter includes Grid algorithms, Neural networks, and Genetic algorithms. The focus of this study will be on the first classification of star identification methods using subgraph isomorphisms. Brief descriptions of several of the algorithms developed under this classification are presented below based on the author who created them. The terminologies used in this work are set in braces {} next to the authors’ original terminologies which are left intact to maintain the authors’ meaning.
+
+<p align="center">
+  <img src="https://github.com/MetricTensorLabs/Star-Tracker/blob/main/documents/notes/figs/bratt_star_identification_list.png" width="700">
+  </br>
+  <em>Fig. List of star identification methods and authors</em>
+</p>
+
+**J. Mortari**</br>
+In 2004, Mortari et al. developed the Pyramid algorithm, supplemented with his k-vectoring technique. This algorithm uses a minimum of 4 stars for feature extraction and pattern creation. Mortari’s Pyramid design was described by Spratling as using an optimal permutation algorithm to exploit the ability of his algorithm to select which stars to match. This permutation is written to minimize the time spent considering stars that do not match, suspecting them to be non-star spikes (false spots) on the image plane. Mortari’s code had been tested to reject non-stars in an image containing only five real stars but with 63 non-stars included, however, this was done with very low centroiding error. He generated patterns beginning with the first star {spot} of the image being the apex of the pattern (one of the corners) and would select in turn the next two stars {spots} of the image to build a triad pattern. With this established, the next star {spot} in the image was selected to verify the validity of the triad. This 4th spot created another three possible triads, hence the impression of a Pyramid with 6 features. If this Pyramid did not match with the patterns in the sub-catalog {feature list}, then the algorithm kept the initial 3 stars {spots} and used the next observed star {spot} in the spot list to generate a new Pyramid.
+
+<p align="center">
+  <img src="https://github.com/MetricTensorLabs/Star-Tracker/blob/main/documents/notes/figs/pyramid.png" width="700">
+  </br>
+  <em>Fig. Basic star triangle and pyramid</em>
+</p>
+
+In above figure, the three vertices $(i, j, k)$ are the primary observable stars {spots} that the algorithm wishes to identify, and vertex $r$ is the fourth star {spot} used as verification, with $v$’s being the angular distance between the observable stars {spots}. With four triad patterns (each triad containing upwards of six features), the features are compared to patterns within the feature list using a feature tolerance. Out of a possible 24 features, Mortari uses only 6 for his identification. Furthermore, he uses a verification phase prior to returning a solution. 
+
+The Pyramid algorithm was successfully tested in-flight on Draper’s “Inertial Stellar Compass” star tracker used on MIT’s satellites HETE and HETE-2. This algorithm is presently under exclusive contract to StarVision Technologies, thus, neither pseudo code, nor programming was obtainable due to infringement issues.
+
+**Computational Considerations**
+Mortari’s Pyramid algorithm was among the fastest in star identification computation. Using what Mortari called his “k-vector” approach, the amount of time required to search the database {catalog} and tables {feature lists} could be independent of the size of the database. This was the fastest among the algorithms in terms of database searching with equation $O(b)$ as the feature extraction and equation $O(k)$ as the database search, where $k$ is is the number of possible star {spot} pairs with inter-star angles within the tolerance and $b$ is the number of stars in the pattern.
