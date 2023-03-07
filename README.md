@@ -1,5 +1,8 @@
-# Star-Tracker
+# Cassiopeia: Towards real-time & robust star tracker
 
+<p align="center">
+  <img src="https://github.com/MetricTensorLabs/Star-Tracker/blob/main/documents/logo/logo.png" width="250">
+</p>
 
 ## Languages
 * Intermediate visualization/ Prototyping: Python / MATLAB 
