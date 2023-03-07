@@ -6,7 +6,9 @@ ABSTRACT: A new highly robust algorithm, called Pyramid, is presented to identif
 
 
 <p align="center">
-  <img src="https://github.com/MetricTensorLabs/Star-Tracker/tree/main/documents/notes/figs/pyramid_flowchart.png" width="300">
+  <img src="https://github.com/MetricTensorLabs/Star-Tracker/blob/main/documents/notes/figs/pyramid_flowchart.png" width="700">
+  </br>
+  <em>Fig. Pyramid algorithm Flowchart</em>
 </p>
 
 ## Brady (et al.) - The Inertial Stellar Compass: A New Direction in Spacecraft Attitude Determination (2002)
