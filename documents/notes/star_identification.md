@@ -4,6 +4,11 @@
 
 ABSTRACT: A new highly robust algorithm, called Pyramid, is presented to identify the stars observed by star trackers in the general lost-in-space case, where no a priori estimate of pointing is available. At the heart of the method is the k-vector approach for accessing the star catalog, which provides a searchless means to obtain all cataloged stars from the whole sky that could possibly correspond to a particular measured pair, given the measured interstar angle and the measurement precision. The Pyramid logic is built on the identification of a four-star polygon structure — the Pyramid — which is associated with an almost certain star identification. Consequently, the Pyramid algorithm is capable of identifying and discarding even a high number of spikes (false stars). The method, which has already been tested in space, is demonstrated to be highly efficient, extremely robust, and fast. All of these features are supported by simulations and by a few ground test experimental results.
 
+
+<p align="center">
+  <img src="https://github.com/MetricTensorLabs/Star-Tracker/tree/main/documents/notes/figs/pyramid_flowchart.png" width="300">
+</p>
+
 ## Brady (et al.) - The Inertial Stellar Compass: A New Direction in Spacecraft Attitude Determination (2002)
 
 Star identification can be accomplished in many different ways and is a widely accepted method for attitude determination onboard many types of spacecraft. The ISC software uses Mortari’s Pyramid algorithm. This algorithm presents a fast and robust star identification technique applicable to WFOV cameras that does not use a searching phase. The Pyramid algorithm is capable of identifying stars without any prior attitude knowledge in less than 1 minute on the ISC target processor running at 4 MHz. Furthermore, the algorithm is extremely tolerant of spikes. For the ISC application, four valid centroids will provide a false match frequency of only 5x10e-5. The ISC software uses Mortari’s ESOQ-2 algorithm to determine a star-camera quaternion from the identified stars.
