@@ -73,7 +73,7 @@ The latter includes Grid algorithms, Neural networks, and Genetic algorithms. Th
 In 2004, Mortari et al. developed the Pyramid algorithm, supplemented with his k-vectoring technique. This algorithm uses a minimum of 4 stars for feature extraction and pattern creation. Mortari’s Pyramid design was described by Spratling as using an optimal permutation algorithm to exploit the ability of his algorithm to select which stars to match. This permutation is written to minimize the time spent considering stars that do not match, suspecting them to be non-star spikes (false spots) on the image plane. Mortari’s code had been tested to reject non-stars in an image containing only five real stars but with 63 non-stars included, however, this was done with very low centroiding error. He generated patterns beginning with the first star {spot} of the image being the apex of the pattern (one of the corners) and would select in turn the next two stars {spots} of the image to build a triad pattern. With this established, the next star {spot} in the image was selected to verify the validity of the triad. This 4th spot created another three possible triads, hence the impression of a Pyramid with 6 features. If this Pyramid did not match with the patterns in the sub-catalog {feature list}, then the algorithm kept the initial 3 stars {spots} and used the next observed star {spot} in the spot list to generate a new Pyramid.
 
 <p align="center">
-  <img src="https://github.com/MetricTensorLabs/Star-Tracker/blob/main/documents/notes/figs/pyramid.png" width="700">
+  <img src="https://github.com/MetricTensorLabs/Star-Tracker/blob/main/documents/notes/figs/pyramid.png" width="300">
   </br>
   <em>Fig. Basic star triangle and pyramid</em>
 </p>
