@@ -11,7 +11,11 @@
 * Formal documentation : LaTeX
 
 ## ToDo
-- [ ] Research and selection of star catalogue
-- [ ] Research and selection of star identification algorithm
+- [x] Research and selection of star catalogue: Hipparcos catalog
+- [x] Research and selection of star identification algorithm: Pyramid algorithm with k-vector search
+- [ ] Implement interface to access contents of Hipparcos catalog; right ascension, declination, and magnitude
+- [ ] Generate custom star catalog ensuring uniform and complete celestial coverage
+- [ ] Study and implement k-vector search algorithm
+- [ ] Study and implement pyramid algorithm
 - [ ] Simulation of star tracker image
 - [ ] Attitude determination after star identification
